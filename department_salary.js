@@ -74,7 +74,20 @@ return totalSalary;
 
 const engineeringDepartment = company.departments.find (dept => dept.departmentName === 'Engineering');
 const totalSalary = calculateDepartmentSalary(engineeringDepartment);
-console.log(`total sales for Sally's team: $${totalSalary}`);
+console.log(`total Salary for the engineering department: $${totalSalary}`);
 
 
 //Task 3- Create a Function to Calculate the Total Salary for All Departments
+
+ function calculateCompanySalary (company) {
+    let totalCompanySalary = 0 
+
+    for (let department of company.departments) {
+        totalCompanySalary += calculateDepartmentSalary (department); 
+
+    }
+    return totalCompanySalary;
+
+ }
+ const companyTotalSalary = calculateCompanySalary (company);
+ console.log (`Total salary for all departments $${companyTotalSalary} `)
